@@ -3,9 +3,9 @@
 #include "byte.h"
 #include "error.h"
 
-static int allwrite(int (*op)(),int fd,char *buf,unsigned int len)
+static ssize_t allwrite(ssize_t (*op)(),int fd,char *buf,unsigned int len)
 {
-  int w;
+  ssize_t w;
 
   while (len) {
     w = op(fd,buf,len);
@@ -27,7 +27,7 @@ int buffer_flush(buffer *s)
   p = s->p;
   if (!p) return 0;
   s->p = 0;
-  return allwrite(s->op,s->fd,s->x,p);
+  return (int)allwrite(s->op,s->fd,s->x,p);
 }
 
 int buffer_putalign(buffer *s,char *buf,unsigned int len)
@@ -55,7 +55,7 @@ int buffer_put(buffer *s,char *buf,unsigned int len)
     if (n < BUFFER_OUTSIZE) n = BUFFER_OUTSIZE;
     while (len > s->n) {
       if (n > len) n = len;
-      if (allwrite(s->op,s->fd,buf,n) == -1) return -1;
+      if ((int)allwrite(s->op,s->fd,buf,n) == -1) return -1;
       buf += n;
       len -= n;
     }
@@ -69,7 +69,7 @@ int buffer_put(buffer *s,char *buf,unsigned int len)
 int buffer_putflush(buffer *s,char *buf,unsigned int len)
 {
   if (buffer_flush(s) == -1) return -1;
-  return allwrite(s->op,s->fd,buf,len);
+  return (int)allwrite(s->op,s->fd,buf,len);
 }
 
 int buffer_putsalign(buffer *s,char *buf)

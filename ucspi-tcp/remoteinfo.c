@@ -10,7 +10,7 @@
 static struct taia now;
 static struct taia deadline;
 
-static int mywrite(int fd,char *buf,int len)
+static ssize_t mywrite(int fd,char *buf,int len)
 {
   iopause_fd x;
 
@@ -28,7 +28,7 @@ static int mywrite(int fd,char *buf,int len)
   return write(fd,buf,len);
 }
 
-static int myread(int fd,char *buf,int len)
+static ssize_t myread(int fd,char *buf,int len)
 {
   iopause_fd x;
 

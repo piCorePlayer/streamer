@@ -13,7 +13,7 @@ buffer bout;
 char inbuf[512];
 buffer bin;
 
-int myread(int fd,char *buf,int len)
+ssize_t myread(int fd,char *buf,int len)
 {
   buffer_flush(&bout);
   return read(fd,buf,len);
