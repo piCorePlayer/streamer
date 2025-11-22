@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <grp.h>
-main()
+int main()
 {
   short x[4];
  

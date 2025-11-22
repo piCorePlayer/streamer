@@ -91,7 +91,7 @@ void doaddressdata(void)
   if (cdb_make_add(&c,address.s,address.len,data.s,data.len) == -1) die_write();
 }
 
-main(int argc,char **argv)
+int main(int argc,char **argv)
 {
   int colon;
   char *x;

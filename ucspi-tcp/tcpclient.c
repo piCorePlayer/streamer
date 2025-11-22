@@ -67,7 +67,7 @@ char ipstr[IP4_FMT];
 
 char seed[128];
 
-main(int argc,char **argv)
+int main(int argc,char **argv)
 {
   unsigned long u;
   int opt;

@@ -154,7 +154,7 @@ void rblsmtpd(void)
   _exit(0);
 }
 
-main(int argc,char **argv,char **envp)
+int main(int argc,char **argv,char **envp)
 {
   char *x;
   int opt;

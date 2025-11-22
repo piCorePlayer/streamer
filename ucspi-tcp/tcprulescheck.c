@@ -33,7 +33,7 @@ void found(char *data,unsigned int datalen)
   _exit(0);
 }
 
-main(int argc,char **argv)
+int main(int argc,char **argv)
 {
   char *fnrules;
   int fd;

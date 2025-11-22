@@ -1,5 +1,5 @@
 #include <unistd.h>
-main()
+int main()
 {
   vfork();
 }
