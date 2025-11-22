@@ -38,7 +38,7 @@ compile auto-str.c buffer.h readwrite.h exit.h
 
 auto_home.c: \
 auto-str conf-home
-	./auto-str auto_home `head -1 conf-home` > auto_home.c
+	./auto-str auto_home $(DESTDIR)/`head -1 conf-home` > auto_home.c
 
 auto_home.o: \
 compile auto_home.c
