@@ -158,6 +158,7 @@ commands.h
 compile: \
 warn-auto.sh conf-cc
 	( cat warn-auto.sh; \
+	[ '$V' != '1' ] || echo echo "`head -1 conf-cc`" '-c $${1+"$$@"}'; \
 	echo exec "`head -1 conf-cc`" '-c $${1+"$$@"}' \
 	) > compile
 	chmod 755 compile
@@ -384,6 +385,8 @@ load: \
 warn-auto.sh conf-ld
 	( cat warn-auto.sh; \
 	echo 'main="$$1"; shift'; \
+	[ '$V' != '1' ] || echo echo "`head -1 conf-ld`" \
+	'-o "$$main" "$$main".o $${1+"$$@"}'; \
 	echo exec "`head -1 conf-ld`" \
 	'-o "$$main" "$$main".o $${1+"$$@"}' \
 	) > load
