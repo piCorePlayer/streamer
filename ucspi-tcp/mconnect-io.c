@@ -1,3 +1,4 @@
+#include <signal.h>
 #include "sig.h"
 #include "wait.h"
 #include "fork.h"

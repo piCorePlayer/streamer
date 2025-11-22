@@ -1,6 +1,7 @@
 #include <sys/types.h>
 #include <sys/param.h>
 #include <netdb.h>
+#include <unistd.h>
 #include "sig.h"
 #include "exit.h"
 #include "sgetopt.h"
@@ -24,6 +25,7 @@
 #define FATAL "tcpclient: fatal: "
 #define CONNECT "tcpclient: unable to connect to "
 
+int socket_tcpnodelay(int s);
 void nomem(void)
 {
   strerr_die2x(111,FATAL,"out of memory");

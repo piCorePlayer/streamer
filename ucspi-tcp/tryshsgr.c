@@ -1,3 +1,5 @@
+#include <unistd.h>
+#include <grp.h>
 main()
 {
   short x[4];

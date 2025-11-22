@@ -1,4 +1,5 @@
-main()
+#include <unistd.h>
+int main()
 {
   unsigned long u;
   u = 1;

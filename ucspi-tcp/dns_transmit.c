@@ -1,8 +1,12 @@
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include "socket.h"
+#include <errno.h>
 #include "alloc.h"
 #include "error.h"
 #include "byte.h"
-#include "readwrite.h"
 #include "uint16.h"
 #include "dns.h"
 

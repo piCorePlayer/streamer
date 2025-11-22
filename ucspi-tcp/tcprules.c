@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <unistd.h>
+#include "scan.h"
+#include "open.h"
 #include "strerr.h"
 #include "stralloc.h"
 #include "getln.h"

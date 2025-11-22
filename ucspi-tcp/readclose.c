@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "readwrite.h"
 #include "error.h"
 #include "readclose.h"

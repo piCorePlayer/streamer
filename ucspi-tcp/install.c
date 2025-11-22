@@ -1,3 +1,5 @@
+#include <sys/stat.h>
+#include <unistd.h>
 #include "buffer.h"
 #include "strerr.h"
 #include "error.h"

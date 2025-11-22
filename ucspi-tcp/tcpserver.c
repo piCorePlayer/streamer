@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/param.h>
 #include <netdb.h>
@@ -63,7 +64,8 @@ static stralloc addresses;
 char bspace[16];
 buffer b;
 
-
+int socket_ipoptionskill(int s);
+int socket_tcpnodelay(int s);
 
 /* ---------------------------- child */
 

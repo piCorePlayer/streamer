@@ -1,3 +1,5 @@
+#include <unistd.h>
+#include "open.h"
 #include "byte.h"
 #include "buffer.h"
 #include "strerr.h"

@@ -1,3 +1,4 @@
+#define __USE_XOPEN_EXTENDED 1
 #include <signal.h>
 #include "sig.h"
 #include "hassgprm.h"

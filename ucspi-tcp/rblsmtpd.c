@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "byte.h"
 #include "str.h"
 #include "scan.h"

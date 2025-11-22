@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "dns.h"
 #include "taia.h"
 #include "uint32.h"

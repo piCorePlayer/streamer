@@ -1,7 +1,6 @@
 #include "buffer.h"
 #include "readwrite.h"
 #include "exit.h"
-
 char bspace[256];
 buffer b = BUFFER_INIT(write,1,bspace,sizeof bspace);
 
