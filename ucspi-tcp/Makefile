@@ -145,9 +145,8 @@ compile chkshsgr.c exit.h
 	./compile chkshsgr.c
 
 choose: \
-warn-auto.sh choose.sh conf-home
+warn-auto.sh choose.sh
 	cat warn-auto.sh choose.sh \
-	| sed s}HOME}"`head -1 conf-home`"}g \
 	> choose
 	chmod 755 choose
 
